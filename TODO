@@ -1,0 +1,13 @@
+TODO:1. do the db connection
+TODO: 2. Do the products API
+TODO: 2.1 GET to get all the products
+TODO:2.2 POST to create a products
+
+for db connection:
+<!-- 1. create mongodb container and test the container
+2.install deps-> dotenv
+2. connect with ecommerce-service with the mongodb database -->
+
+<!-- //Feature: user able to see the list of products in the UI
+//1. create a products API using which product will be created(POST) and listed (GET)
+2.connect the FE to BE and get the products fron the backend in the UI -->

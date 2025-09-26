@@ -30,4 +30,20 @@ router.post("/", async(req, res)=> {
 
 })
 
+// Delete a product by its MongoDB _id
+router.delete("/:id", async (req, res) => {
+  try {
+    const deletedProduct = await Product.findByIdAndDelete(req.params.id);
+    if(deletedProduct) {
+      res.status(200).json({ message: "Product deleted successfully" });
+    } else {
+      res.status(404).json({ message: "Product not found" });
+    }
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ message: "Server error" });
+  }
+});
+
+
 module.exports = router;
