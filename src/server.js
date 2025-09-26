@@ -2,6 +2,7 @@ const express = require("express");
 const morgan = require("morgan");
 const connectDB = require("./config/db");
 const productRoutes = require('./routes/productRoutes');
+const homepageRoutes= require('./routes/homepageRoutes')
 const cors= require('cors')
 require('dotenv').config();
 const app= express();
@@ -16,6 +17,8 @@ app.get("/", (req, res) => {
 });
 //products route
 app.use("/api/products", productRoutes)
+//home Route
+app.use("/api/homepage", homepageRoutes)
 app.listen(PORT, () => {
     console.log(`Server listening to port ${PORT}.`);
 }); 
