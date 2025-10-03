@@ -4,7 +4,9 @@ const connectDB = require("./config/db");
 const productRoutes = require('./routes/productRoutes');
 const homepageRoutes= require('./routes/homepageRoutes');
 const authRoutes = require('./routes/authRoutes');
-const cors= require('cors')
+const cartRoutes= require("./routes/cartRoutes");
+const cors= require('cors');
+const cart = require("./models/cart");
 require('dotenv').config();
 const app= express();
 app.use(morgan("dev"));
@@ -22,6 +24,8 @@ app.use("/api/products", productRoutes)
 app.use("/api/homepage", homepageRoutes)
 //auth route
 app.use("/api/auth", authRoutes)
+//cart route
+app.use("/api/cart", cartRoutes)
 app.listen(PORT, () => {
     console.log(`Server listening to port ${PORT}.`);
 }); 
